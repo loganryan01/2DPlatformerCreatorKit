@@ -9,6 +9,8 @@ namespace TwoDimensionalPlatformerCreatorKit
     {
         [SerializeField, Tooltip("A reference to the GroundCheck script for the object.")]
         private GroundCheck groundCheck;
+        [SerializeField, Tooltip("A reference to the CeilingCheck script for the object.")]
+        private CeilingCheck ceilingCheck;
         [SerializeField, Tooltip("The force applied to the object when jumping.")]
         private float jumpForce = 10f;
 
@@ -51,6 +53,11 @@ namespace TwoDimensionalPlatformerCreatorKit
         private void ApplyJumpForce()
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+            if (ceilingCheck.IsTouchingCeiling() && rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+            }
         }
     }
 }
