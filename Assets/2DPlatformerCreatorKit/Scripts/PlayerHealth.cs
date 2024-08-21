@@ -8,6 +8,9 @@ namespace TwoDimensionalPlatformerCreatorKit
     {
         [SerializeField, Tooltip("The maximum health for the player.")]
         private int maximumHealth = 5;
+        [SerializeField]
+        private PlayerLives lives;
+
         private int currentHealth;
         
         // Start is called before the first frame update
@@ -36,6 +39,11 @@ namespace TwoDimensionalPlatformerCreatorKit
         public void Kill()
         {
             Debug.Log("Player is dead!");
+
+            if (lives != null)
+            {
+                lives.PlayerFailed();
+            }
         }
     }
 }
