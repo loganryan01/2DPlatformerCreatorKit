@@ -365,9 +365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a4230637b441394cb1317b22b01d561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 6.5
   groundCheck: {fileID: 502473332}
   ceilingCheck: {fileID: 1085746928}
-  jumpForce: 6.5
 --- !u!50 &157888135
 Rigidbody2D:
   serializedVersion: 4

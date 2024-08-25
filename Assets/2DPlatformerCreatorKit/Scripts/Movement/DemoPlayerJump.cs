@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace TwoDimensionalPlatformerCreatorKit
+using TwoDimensionalPlatformerCreatorKit;
+
+namespace TwoDimensionalPlatformerDemo
 {
-    [RequireComponent(typeof(Rigidbody2D))]
-    public class Jump : MonoBehaviour
+    public class DemoPlayerJump : PlayerJump
     {
         [SerializeField, Tooltip("A reference to the GroundCheck script for the object.")]
         private GroundCheck groundCheck;
         [SerializeField, Tooltip("A reference to the CeilingCheck script for the object.")]
         private CeilingCheck ceilingCheck;
-        [SerializeField, Tooltip("The force applied to the object when jumping.")]
-        private float jumpForce = 10f;
 
         // A reference to the Rigidbody2D componenet
         private Rigidbody2D rb;
@@ -20,13 +17,13 @@ namespace TwoDimensionalPlatformerCreatorKit
         private bool canDoubleJump = false;
         
         // Start is called before the first frame update
-        void Start()
+        protected virtual void Start()
         {
             rb = GetComponent<Rigidbody2D>();
         }
 
         // Update is called once per frame
-        void Update()
+        protected virtual void Update()
         {
             if (groundCheck.IsGrounded())
             {
@@ -37,11 +34,11 @@ namespace TwoDimensionalPlatformerCreatorKit
             {
                 if (groundCheck.IsGrounded())
                 {
-                    ApplyJumpForce();
+                    Jump();
                 }
                 else if (canDoubleJump)
                 {
-                    ApplyJumpForce();
+                    Jump();
                     canDoubleJump = false;
                 }
             }
@@ -50,7 +47,7 @@ namespace TwoDimensionalPlatformerCreatorKit
         /// <summary>
         /// Sets the y-velocity of the Rigidbody2D to the 'jumpForce', causing the object to jump.
         /// </summary>
-        private void ApplyJumpForce()
+        protected override void Jump()
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
 
