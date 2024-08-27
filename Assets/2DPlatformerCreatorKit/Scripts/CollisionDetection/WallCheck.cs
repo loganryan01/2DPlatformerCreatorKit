@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+/******************************************************************************
+    Name: WallCheck.cs
+    Author: Logan Ryan
+    Description: Checks if the player character is touching a wall object.
+******************************************************************************/
 using UnityEngine;
 
 namespace TwoDimensionalPlatformerCreatorKit
 {
-    public class WallCheck : MonoBehaviour
+    /// <summary>
+    /// WallCheck checks if the player character is touching a wall object.
+    /// </summary>
+    public abstract class WallCheck : MonoBehaviour
     {
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Wall"))
-            {
-                // Handle collision with walls if needed
-                Debug.Log("Colliding with a wall");
-            }
-        }
+        /// <summary>
+        /// Handle the collision between the player character and the colliding wall object.
+        /// </summary>
+        protected abstract void OnWallCollision();
     }
 }
