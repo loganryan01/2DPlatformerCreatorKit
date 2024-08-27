@@ -7,7 +7,7 @@ namespace TwoDimensionalPlatformerDemo
     public class DemoPlayerJump : PlayerJump
     {
         [SerializeField, Tooltip("A reference to the GroundCheck script for the object.")]
-        private GroundCheck groundCheck;
+        private DemoGroundCheck groundCheck;
         [SerializeField, Tooltip("A reference to the CeilingCheck script for the object.")]
         private CeilingCheck ceilingCheck;
 
