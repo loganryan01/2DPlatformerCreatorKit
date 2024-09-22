@@ -1,19 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+/******************************************************************************
+    Name: CeilingCheck.cs
+    Author: Logan Ryan
+    Description: Checks if the player character has touched a ceiling object.
+******************************************************************************/
 using UnityEngine;
 
 namespace TwoDimensionalPlatformerCreatorKit
 {
-    public class CeilingCheck : MonoBehaviour
+    /// <summary>
+    /// GroundCheck checks if the player character has landed on a ground object.
+    /// </summary>
+    public abstract class CeilingCheck : MonoBehaviour
     {
         [SerializeField, Tooltip("Which layer(s) should be considered as ground.")]
-        private LayerMask groundLayer;
+        protected LayerMask groundLayer;
         [SerializeField, Tooltip("An empty GameObject positioned at the top of the player character.")]
-        private Transform ceilingCheck;
+        protected Transform ceilingCheck;
         [SerializeField, Tooltip("The radius of the circle used to check for ground contact.")]
-        private float ceilingCheckRadius = 0.2f;
+        protected float ceilingCheckRadius = 0.2f;
 
-        private bool isTouchingCeiling;
+        protected bool isTouchingCeiling;
 
         // Update is called once per frame
         void Update()
@@ -24,19 +30,16 @@ namespace TwoDimensionalPlatformerCreatorKit
         /// <summary>
         /// Checks if the ceilingCheck object is overlapping with any ground colliders.
         /// </summary>
-        private void CheckIfTouchingCeiling()
+        protected virtual void CheckIfTouchingCeiling()
         {
             isTouchingCeiling = Physics2D.OverlapCircle(ceilingCheck.position, ceilingCheckRadius, groundLayer);
-
-            // For debug purposes, a ground check line is drawn in the scene view
-            Debug.DrawLine(ceilingCheck.position, ceilingCheck.position + Vector3.up * ceilingCheckRadius, isTouchingCeiling ? Color.green : Color.red);
         }
 
         /// <summary>
         /// Returns the current value of 'isTouchingCeiling'.
         /// </summary>
         /// <returns></returns>
-        public bool IsTouchingCeiling()
+        public virtual bool IsTouchingCeiling()
         {
             return isTouchingCeiling;
         }
