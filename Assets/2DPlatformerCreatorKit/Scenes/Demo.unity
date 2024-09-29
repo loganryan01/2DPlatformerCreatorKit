@@ -940,7 +940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554980711}
   - component: {fileID: 554980710}
-  - component: {fileID: 554980712}
+  - component: {fileID: 554980714}
   - component: {fileID: 554980713}
   m_Layer: 6
   m_Name: MovingPlatform
@@ -1016,21 +1016,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &554980712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 554980709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf92c580a6469542817dad5ab2e0c0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementType: 0
-  speed: 2
-  distance: 5
 --- !u!61 &554980713
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1076,6 +1061,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &554980714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554980709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19dd6f8e1f2ddf49886a024ce170ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementType: 0
+  speed: 2
+  distance: 5
 --- !u!1 &779143868
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,7 +3606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039360986}
   - component: {fileID: 2039360985}
-  - component: {fileID: 2039360984}
+  - component: {fileID: 2039360987}
   - component: {fileID: 2039360983}
   m_Layer: 6
   m_Name: MovingPlatform (1)
@@ -3660,21 +3660,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2039360984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039360982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf92c580a6469542817dad5ab2e0c0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementType: 1
-  speed: 2
-  distance: 5
 --- !u!212 &2039360985
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3742,6 +3727,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2039360987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039360982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19dd6f8e1f2ddf49886a024ce170ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementType: 1
+  speed: 2
+  distance: 5
 --- !u!1 &2084893144
 GameObject:
   m_ObjectHideFlags: 0
